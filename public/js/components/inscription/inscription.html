@@ -1,0 +1,88 @@
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+
+        <div class="card card-signup">
+            <h2 class="card-title text-center">Connexion / Inscription</h2>
+            <div class="row">
+                <div class="col-md-5 col-md-offset-1">
+                    <form class="form" ng-submit="connexion()">
+                        <div class="content">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">face</i>
+                                </span>
+                                <div class="form-group is-empty">
+                                    <input type="text" ng-model="username" class="form-control" placeholder="Nom">
+                                    <span class="material-input"></span>
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">lock_outline</i>
+                                </span>
+                                <div class="form-group is-empty">
+                                    <input ng-model="password" type="password" placeholder="Mot de passe" class="form-control">
+                                    <span class="material-input"></span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="footer text-center">
+                            <input type="submit" class="btn btn-primary btn-round" value="Connexion">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-5">
+
+                    <form class="form" ng-submit="inscription()">
+                        <div class="content">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">face</i>
+                                </span>
+                                <div class="form-group is-empty">
+                                    <input type="text" ng-model="username" class="form-control" placeholder="Nom">
+                                    <span class="material-input"></span>
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">email</i>
+                                </span>
+                                <div class="form-group is-empty"><input type="email" ng-model="email" class="form-control" placeholder="Adresse email">
+                                    <span class="material-input"></span>
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">lock_outline</i>
+                                </span>
+                                <div class="form-group is-empty">
+                                    <input ng-model="password" type="password" placeholder="Mot de passe" class="form-control">
+                                    <span class="material-input"></span>
+                                </div>
+                            </div>
+
+                            <!-- If you want to add a checkbox to this form, uncomment this code -->
+
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="optionsCheckboxes" checked=""><span class="checkbox-material">
+                                </span>
+                                    J'accepte les termes et conditions
+                                </label>
+                            </div>
+                        </div>
+                        <div class="footer text-center">
+                            <input type="submit" class="btn btn-primary btn-round" value="S'inscrire">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

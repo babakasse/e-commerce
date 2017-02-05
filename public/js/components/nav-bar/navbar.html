@@ -1,0 +1,31 @@
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigationBar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Nacim</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navigationBar">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a ui-sref="compte" class="btn btn-white btn-simple">
+                        <i class="material-icons">account_circle</i> Compte
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref="panier" class="btn btn-white btn-simple">
+                        <i class="material-icons">shopping_cart</i> Panier
+                        <span ng-if="quantitePanier.length !== 0 && quantitePanier">({{quantitePanier}})</span>
+                    </a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Administration</title>
+    <link rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.min.css'/>
+    <link rel="stylesheet" href="/bower_components/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="/bower_components/select2-bootstrap-theme/dist/select2-bootstrap.min.css">
+    <link rel='stylesheet' href='/bower_components//font-awesome/css/font-awesome.min.css'/>
+    <link rel="stylesheet" href="/css/style_app.css">
+</head>
+<body>
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/admin">Administration Nacim</a>
+        </div>
+        {{#if isConnected }}
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <a href="/admin/gestion">Gestion produit</a>
+            </li>
+        </ul>
+            <a class="btn btn-danger navbar-btn navbar-right" href="/logout">Déconnexion</a>
+        {{else}}
+            <form action="/login" method="post" class="navbar-form navbar-right">
+                <input type="text" class="form-control" name="username" placeholder="Nom" required="required" />
+                <input type="password" class="form-control" name="password" placeholder="Password" required="required" />
+                <button class="btn btn-default" type="Submit">Connexion</button>
+            </form>
+        {{/if}}
+    </div>
+</nav>
+
+<div class="container">
+    {{#if message }}
+        <div class="alert alert-info">
+            <strong>{{message}}</strong>
+        </div>
+    {{/if}}
+    {{{body}}}
+</div>
+
+
+<script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/bower_components/select2/dist/js/select2.min.js"></script>
+<script type="text/javascript" src="/js/script/script.js"></script>
+</body>
+</html>

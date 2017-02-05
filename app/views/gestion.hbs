@@ -1,0 +1,126 @@
+<div class="row">
+    <button class="btn btn-success" data-toggle="modal" data-target="#modalProduct">
+        <i class="fa fa-plus fa-lg"></i> Ajouter un produit
+    </button>
+    <table class="table table-responsive">
+        <theader>
+            <tr>
+                <th>Image</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Marque</th>
+                <th>Catégorie</th>
+                <th>Couleur</th>
+                <th>Taille</th>
+                <th>Prix</th>
+                <th>Action</th>
+            </tr>
+        </theader>
+        <tbody>
+        {{#each products}}
+            <tr>
+                <td width="5%">
+                    <img class="img-responsive img-thumbnail" src="/img/produit/{{nomImage}}" alt="{{nomImage}}">
+                </td>
+                <td>{{nom}}</td>
+                <td>{{description}}</td>
+                <td>{{marque}}</td>
+                <td>{{categorie}}</td>
+                <td>{{couleur}}</td>
+                <td>{{taille}}</td>
+                <td>{{prix}} €</td>
+                <td>
+
+                    <span>
+                        <a class="btn btn-info" href="/admin/gestion/product/{{_id}}"><i class="fa fa-pencil"></i></a>
+                        <a class="btn btn-danger" href="/api/product/delete/{{_id}}"><i class="fa fa-trash"></i></a>
+                    </span>
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="modalProduct" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static"
+     data-keyboard="false" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title text-center" id="myModalLabel">
+                    Ajout de produit
+                </h4>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+
+                <form role="form" method="post" enctype="multipart/form-data" action="/api/products/add">
+                    <div class="form-group">
+                        <label>Nom</label>
+                        <input type="text" class="form-control" name="nom" placeholder="Nom"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea class="form-control" name="description" placeholder="Courte description..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Image</label>
+                        <input type="file" class="form-control" name="image"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Marque</label>
+                        <input type="text" class="form-control" name="marque" placeholder="Marque"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Catégorie</label>
+                        <select class="select_choice_article" name="categorie" title="select_choice_article">
+                            <optgroup label="Haut">
+                                <option value="Pull">Pull</option>
+                                <option value="Sweat">Sweat</option>
+                                <option value="Manteau">Manteau</option>
+                                <option value="Chemise">Chemise</option>
+                                <option value="T-shirt">T-shirt</option>
+                                <option value="Gilet">Gilet</option>
+                            </optgroup>
+                            <optgroup label="Bas">
+                                <option value="Pantalon">Pantalon</option>
+                                <option value="Jean">Jean</option>
+                                <option value="Short">Short</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Taille</label>
+                        <select class="select_size_article" multiple="multiple" name="taille" title="select_size_article">
+                            <option value="XS">XS</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XLL">XLL</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Couleur</label>
+                        <input type="text" class="form-control" name="couleur" placeholder="Couleur"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Prix</label>
+                        <input type="number" class="form-control" name="prix" placeholder="Prix"/>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Valider</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+

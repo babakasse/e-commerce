@@ -1,0 +1,67 @@
+<!doctype html>
+<html ng-app="commerceApp">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>E-COMMERCE</title>
+
+    <!-- Fonts and icons -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
+    <link rel="stylesheet" href="css/material-kit.css">
+    <link rel="stylesheet" href="css/style.min.css">
+
+	<!-- Angular -->
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
+
+    <!-- Components -->
+    <script type="text/javascript" src="js/components/accueil/accueil.component.js"></script>
+    <script type="text/javascript" src="js/components/compte/compte.component.js"></script>
+    <script type="text/javascript" src="js/components/fiche-produit/ficheProduit.component.js"></script>
+    <script type="text/javascript" src="js/components/nav-bar/navbar.component.js"></script>
+    <script type="text/javascript" src="js/components/panier/panier.component.js"></script>
+    <script type="text/javascript" src="js/components/produit/produit.component.js"></script>
+    <script type="text/javascript" src="js/components/inscription/inscription.component.js"></script>
+
+    <!-- Services -->
+    <script src="js/services/user.js"></script>
+	<script src="js/services/products.js"></script>
+    <script src="js/services/panier.js"></script>
+
+    <!-- config Angular -->
+	<script src="js/core.js"></script>
+
+</head>
+
+<body>
+
+    <navigation-bar></navigation-bar>
+
+    <div class="container">
+        <ui-view></ui-view>
+    </div>
+
+
+    <!-- lib javascript -->
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/noty/js/noty/packaged/jquery.noty.packaged.min.js"></script>
+    <script type="text/javascript" src="js/script/material.min.js"></script>
+    <script type="text/javascript" src="js/script/nouislider.min.js"></script>
+    <script type="text/javascript" src="js/script/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="bower_components/select2/dist/js/select2.min.js"></script>
+    <script type="text/javascript" src="bower_components/lodash/dist/lodash.min.js"></script>
+    <script type="text/javascript" src="js/script/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<div class="related-products">
+    <h3 class="title text-center">Nos offres du moment : </h3>
+
+    <br>
+
+    <produit-page></produit-page>
+</div>
+
+<div class="section jumbotron">
+    <div class="container">
+        <h2 class="section-title">Trouvez l'habit de vos rêves</h2>
+        <div class="row">
+
+
+            <div class="col-md-3">
+                <div class="card card-refine card-plain">
+                    <div class="content">
+                        <div class="panel-group" id="accordion">
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h6 class="panel-title">
+                                        <a data-toggle="collapse" href="#refinePrice">
+                                            Fourchette de prix
+                                            <i class="fa fa-caret-up pull-right"></i>
+                                        </a>
+                                    </h6>
+                                </div>
+                                <div id="refinePrice" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <div id="sliderDouble" class="slider slider-info">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h6 class="panel-title">
+                                        <a data-toggle="collapse" href="#refineClothing" class="collapsed">
+                                            Clothing
+                                            <i class="fa fa-caret-up pull-right"></i>
+                                        </a>
+                                    </h6>
+                                </div>
+                                <div id="refineClothing" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <label class="checkbox checked">
+                                            <span class="icons"><span class="first-icon fa fa-square-o"></span><span class="second-icon fa fa-check-square-o"></span></span><input type="checkbox" value="" data-toggle="checkbox" checked="">
+                                            Blazers
+                                        </label>
+                                        <label class="checkbox">
+                                            <span class="icons"><span class="first-icon fa fa-square-o"></span><span class="second-icon fa fa-check-square-o"></span></span><input type="checkbox" value="" data-toggle="checkbox">
+                                            Casual Shirts
+                                        </label>
+                                        <label class="checkbox">
+                                            <span class="icons"><span class="first-icon fa fa-square-o"></span><span class="second-icon fa fa-check-square-o"></span></span><input type="checkbox" value="" data-toggle="checkbox">
+                                            Formal Shirts
+                                        </label>
+                                        <label class="checkbox">
+                                            <span class="icons"><span class="first-icon fa fa-square-o"></span><span class="second-icon fa fa-check-square-o"></span></span><input type="checkbox" value="" data-toggle="checkbox">
+                                            Jeans
+                                        </label>
+                                        <label class="checkbox">
+                                            <span class="icons"><span class="first-icon fa fa-square-o"></span><span class="second-icon fa fa-check-square-o"></span></span><input type="checkbox" value="" data-toggle="checkbox">
+                                            Polos
+                                        </label>
+                                        <label class="checkbox">
+                                            <span class="icons"><span class="first-icon fa fa-square-o"></span><span class="second-icon fa fa-check-square-o"></span></span><input type="checkbox" value="" data-toggle="checkbox">
+                                            Pyjamas
+                                        </label>
+                                        <label class="checkbox">
+                                            <span class="icons"><span class="first-icon fa fa-square-o"></span><span class="second-icon fa fa-check-square-o"></span></span><input type="checkbox" value="" data-toggle="checkbox">
+                                            Shorts
+                                        </label>
+                                        <label class="checkbox">
+                                            <span class="icons"><span class="first-icon fa fa-square-o"></span><span class="second-icon fa fa-check-square-o"></span></span><input type="checkbox" value="" data-toggle="checkbox">
+                                            Trousers
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h6 class="panel-title">
+                                        <a data-toggle="collapse" href="#refineDesigner">
+                                            Designer
+                                            <i class="fa fa-caret-up pull-right"></i>
+                                        </a>
+                                    </h6>
+                                </div>
+                                <div id="refineDesigner" class="panel-collapse collapse in">
+                                    <div class="panel-body panel-scroll">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="optionsCheckboxes">
+                                                Adidas
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end panel -->
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h6 class="panel-title">
+                                        <a data-toggle="collapse" href="#refineColour" class="collapsed">
+                                            Couleur
+                                            <i class="fa fa-caret-up pull-right"></i>
+                                        </a>
+                                    </h6>
+                                </div>
+                                <div id="refineColour" class="panel-collapse collapse">
+                                    <div class="panel-body panel-scroll">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="optionsCheckboxes">
+                                                Toutes
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- end panel -->
+
+                        </div>
+                    </div>
+                </div> <!-- end card -->
+            </div>
+
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4" ng-repeat="produit in produits">
+
+                        <div class="card card-product">
+                            <a ui-sref="produit({ id_produit: '{{produit._id}}' })">
+                                <div class="card-image">
+                                    <img class="img" ng-src="img/produit/{{produit.nomImage}}">
+                                    <div class="ripple-container"></div>
+                                </div>
+                            </a>
+
+                            <div class="content">
+                                <a ui-sref="produit({ id_produit: '{{produit._id}}' })">
+                                    <h4 class="card-title">
+                                        <span>{{produit.marque}}</span>
+                                    </h4>
+                                    <div class="card-description">
+                                        {{produit.description}}
+                                    </div>
+                                </a>
+
+                                <div class="footer">
+                                    <div class="price">
+                                        <h4>{{produit.prix}} €</h4>
+                                    </div>
+                                    <div class="stats">
+                                        <button type="button" rel="tooltip" title="" class="btn btn-just-icon btn-simple btn-rose" data-original-title="Ajouter au panier">
+                                            <i class="material-icons">shopping_cart</i>
+                                            <div class="ripple-container"></div>
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

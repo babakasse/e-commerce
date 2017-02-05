@@ -1,0 +1,79 @@
+<div class="row card">
+    <div class="col-md-12 text-center text-info">
+        <h3><b>Panier</b></h3>
+    </div>
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table table-shopping table-responsive">
+                <thead>
+                    <tr>
+                        <th class="hidden-xs">Image</th>
+                        <th>Nom</th>
+                        <th>Couleur</th>
+                        <th>Taille</th>
+                        <th>Prix</th>
+                        <th>Quantité</th>
+                        <th>Montant</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="produit{{produit._id}}" ng-repeat="produit in produits">
+                        <td class="hidden-xs">
+                            <div class="img-container">
+                                <img class="img" ng-src="img/produit/{{produit.nomImage}}">
+                            </div>
+                        </td>
+                        <td class="td-name">
+                            <a ui-sref="produit({ id_produit: '{{produit._id}}' })">{{produit.nom}}</a>
+                            <br><small>{{produit.marque}}</small>
+                        </td>
+                        <td>{{produit.couleur}}</td>
+                        <td>{{produit.taille}}</td>
+                        <td class="td-number">
+                            {{produit.prix}} <small>€</small>
+                        </td>
+                        <td class="td-number">
+                            {{produit.quantite}}
+                            <div class="btn-group">
+                                <button class="btn btn-round btn-info btn-xs" ng-click="removeArticle(produit._id)">
+                                    <i class="material-icons">remove</i>
+                                </button>
+                                <button class="btn btn-round btn-info btn-xs" ng-click="addArticle(produit._id)">
+                                    <i class="material-icons">add</i>
+                                </button>
+                            </div>
+                        </td>
+                        <td class="td-number">
+                            <small>€</small>{{produit.quantite*produit.prix}}
+                        </td>
+                        <td class="td-actions">
+                            <button type="button" data-toggle="tooltip" data-placement="right" class="btn btn-simple"
+                                    data-original-title="Supprimer l'article" ng-click="deleteArticle(produit._id)">
+                                <i class="material-icons">close</i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfooter>
+                    <tr>
+                        <td colspan="3">
+                        </td>
+                        <td class="td-total">
+                            Total :
+                        </td>
+                        <td class="td-price">
+                            2,346<small>€</small>
+                        </td>
+                        <td colspan="3" class="text-right">
+                            <button type="button" class="btn btn-info btn-round">Valider
+                                <i class="material-icons">keyboard_arrow_right</i>
+                            </button>
+                        </td>
+                    </tr>
+                </tfooter>
+            </table>
+        </div>
+
+    </div>
+</div>
